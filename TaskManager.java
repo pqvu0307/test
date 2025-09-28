@@ -23,6 +23,7 @@ public class TaskManager {
                     addTask();
                     break;
                 case 2:
+                    viewTasks();
                     // Todo: Implement view tasks
                     break;
                 case 3:
@@ -40,4 +41,15 @@ public class TaskManager {
         tasks.add(new Task(description));
         System.out.println("Task added.");
     }
+    private void viewTasks() {
+    if (tasks.isEmpty()) {
+        System.out.println("No tasks available.");
+    } else {
+        System.out.println("\nTasks:");
+        for (int i = 0; i < tasks.size(); i++) {
+            Task task = tasks.get(i);
+            System.out.println((i + 1) + ". " + task.getDescription());
+        }
+    }
+}
 }
